@@ -1,0 +1,13 @@
+<workunit schemaName="vetpermit">
+    <invokers>
+        <invoker type="vetpermit:create" caption="Vet Permit" action="create" role="ENCODER,MASTER"/>
+        <invoker type="vetpermit:open" caption="Vet Permit" action="open" role="ENCODER,MASTER"/>
+        <invoker type="formActions" caption="Payment Order"  
+            action="pay" visibleWhen="#{entity.state=='DRAFT' &amp;&amp; mode=='read'}"/>
+               
+    </invokers>
+    <code class="test.vetpermit.models.VetPermitModel" />
+    <pages>
+        <page template="test.vetpermit.views.VetPermitPage" />
+    </pages>
+</workunit>

@@ -1,0 +1,10 @@
+<workunit schemaName="specie">
+    <invokers>
+        <invoker type="specie:create" caption="Capture Specie" action="create" role="MASTER"/>
+        <invoker type="specie:open" caption="Capture Specie" action="open" role="MASTER"/>
+    </invokers>
+    <code class="test.vetpermit.models.SpecieModel" />
+    <pages>
+        <page template="test.vetpermit.views.SpeciePage" />
+    </pages>
+</workunit>

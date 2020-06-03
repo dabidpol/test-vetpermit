@@ -1,0 +1,14 @@
+"entity.*|selectedItem"[mode == 'read']{
+    enabled:false;
+}
+
+"entity.*|selectedItem"[mode != 'read']{
+    enabled:true;
+}
+
+
+
+"entity.objid"[mode == 'edit']{
+    enabled:false;
+}
+

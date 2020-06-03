@@ -1,0 +1,8 @@
+<workunit extends="com/rameses/seti2/templates/CrudLookup.xml" 
+         schemaName="vetsignatory">
+  <invokers>
+      <invoker type="vetsignatory:lookup" caption="Lookup Signatory" 
+                 action="init" target="popup" height="350"  
+                 cols="name,position,prcno,validity"/>
+  </invokers>
+</workunit>

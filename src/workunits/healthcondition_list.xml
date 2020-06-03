@@ -1,0 +1,5 @@
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="healthcondition" allowDelete = "false">
+    <invokers>
+        <invoker folderid="home/vet" caption="HEALTH CONDITIONS" action="init" role="MASTER"/>
+    </invokers>
+</workunit>

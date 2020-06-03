@@ -1,0 +1,12 @@
+<workunit schemaName="batchpay">
+    <invokers>
+        <invoker type="batchpay:create" caption="Batch Pay" action="create" role="ENCODER"/>
+        <invoker type="batchpay:open" caption="Batch Pay" action="open" role="ENCODER"/>
+        <invoker type="formActions" caption="Payment Order"  
+            action="pay" visibleWhen="#{entity.state=='CLOSED'}"/>
+    </invokers>
+    <code class="test.vetpermit.models.VetBatchPayModel" />
+    <pages>
+        <page template="test.vetpermit.views.VetBatchPayPage" />
+    </pages>
+</workunit>

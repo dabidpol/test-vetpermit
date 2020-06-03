@@ -1,0 +1,15 @@
+<workunit>
+    <invokers>
+      <!--  <invoker folderid="/explorer/training/personnel" action="create" caption="Personnel" target="popup" > </invoker>
+        <invoker folderid="/home/training/personnel" action="create" caption="Personnel" target="popup" 
+        > </invoker>  -->
+        <invoker type="vetpermit:form:formActions" action="preview" visibleWhen="#{entity.state=='CLOSED'}" caption="Print Certificate" /> 
+        <invoker type="formActions" action="_close" caption="Close" mnemonic="c"> </invoker>
+        
+           
+    </invokers>
+    <code class="test.vetpermit.reports.VeterinaryHealthCertificateController"/>
+    <pages>
+        <page name="report" template="com.rameses.osiris2.common.ui.ReportPreviewPage" />
+    </pages>
+</workunit>

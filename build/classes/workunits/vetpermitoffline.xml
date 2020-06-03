@@ -1,0 +1,13 @@
+<workunit schemaName="vetpermit">
+    <invokers>
+<!--        <invoker type="vetpermit:create" caption="Vet Permit Offline" action="create" role="OFFLINE"/>
+        <invoker type="vetpermit:open" caption="Vet Permit Offline" action="open" role="OFFLINE"/>-->
+        <invoker folderid="/home/vet" caption="Vet Permit Offline" action="create" index="8" role="OFFLINE"/>
+        
+               
+    </invokers>
+    <code class="test.vetpermit.models.VetPermitOfflineModel" />
+    <pages>
+        <page template="test.vetpermit.views.VetPermitOfflinePage" />
+    </pages>
+</workunit>

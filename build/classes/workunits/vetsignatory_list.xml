@@ -1,0 +1,5 @@
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="vetsignatory" allowDelete = "false">
+    <invokers>
+        <invoker folderid="home/vet" caption="SIGNATORIES" action="init" role="MASTER"/>
+    </invokers>
+</workunit>

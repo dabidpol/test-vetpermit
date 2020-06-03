@@ -1,0 +1,8 @@
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="vetpermit" 
+         cols="state,txndate,expdate,permitno,person.name,purpose.name,origin,destination,receiptno"
+                orderBy="txndate DESC">>
+    <invokers>
+        <invoker folderid="home/vet" caption="Vet Permit List" action="init" index="100" role="MASTER,ENCODER"/>
+        
+    </invokers>
+</workunit>

@@ -1,0 +1,8 @@
+<workunit extends="com/rameses/seti2/templates/CrudLookup.xml" 
+         schemaName="specie">
+  <invokers>
+      <invoker type="specie:lookup" caption="Lookup Specie" 
+                 action="init" target="popup" height="350"  
+                 cols="name,code,header"/>
+  </invokers>
+</workunit>

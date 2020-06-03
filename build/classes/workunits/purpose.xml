@@ -1,0 +1,10 @@
+<workunit schemaName="purpose">
+    <invokers>
+        <invoker type="purpose:create" caption="Capture Purpose" action="create" role="MASTER"/>
+        <invoker type="purpose:open" caption="Capture Purpose" action="open" role="MASTER"/>
+    </invokers>
+    <code class="test.vetpermit.models.PurposeModel" />
+    <pages>
+        <page template="test.vetpermit.views.PurposePage" />
+    </pages>
+</workunit>

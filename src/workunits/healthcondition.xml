@@ -1,0 +1,10 @@
+<workunit schemaName="healthcondition">
+    <invokers>
+        <invoker type="healthcondition:create" caption="Capture Health Condition" action="create" role="MASTER"/>
+        <invoker type="healthcondition:open" caption="Capture Health Condition" action="open" role="MASTER"/>
+    </invokers>
+    <code class="test.vetpermit.models.HealthConditionModel" />
+    <pages>
+        <page template="test.vetpermit.views.HealthConditionPage" />
+    </pages>
+</workunit>

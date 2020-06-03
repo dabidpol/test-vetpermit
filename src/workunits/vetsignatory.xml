@@ -1,0 +1,10 @@
+<workunit schemaName="vetsignatory">
+    <invokers>
+        <invoker type="vetsignatory:create" caption="Capture Signatory" action="create" role="MASTER"/>
+        <invoker type="vetsignatory:open" caption="Capture Signatory" action="open" role="MASTER"/>
+    </invokers>
+    <code class="test.vetpermit.models.SignatoryModel" />
+    <pages>
+        <page template="test.vetpermit.views.SignatoryPage" />
+    </pages>
+</workunit>
