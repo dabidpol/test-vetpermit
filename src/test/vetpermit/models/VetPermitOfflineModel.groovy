@@ -44,17 +44,21 @@ class VetPermitOfflineModel extends CrudFormModel{
     //     return ( entity.state.toString().matches('DRAFT|CLOSED') ); 
    // }
    
+    def genders = ['M','F','M/F']
+    def agetypes = ['YEARS', 'MONTHS', 'WEEKS', 'DAYS']
+   
     public void afterCreate(){
         entity.txndate = dtSvc.getBasicServerDate();
         //entity.expdate = dtSvc.getBasicServerDate() + 3;
         entity.state = "OFFLINE"
+        entity.seqno = "VETOFFLINE-" + dtSvc.getServerYear()+ "-" + seqSvc.getNextFormattedSeries('vetpermitoffline');
         
     }
    
     public void beforeSave(o){
         
         
-        entity.seqno = "VET-" + seqSvc.getNextFormattedSeries('vetpermitoffline');
+        
         entity.recordlog_datecreated = dtSvc.getServerDate();
         entity.recordlog_createdbyuser = OsirisContext.env.FULLNAME;
         entity.recordlog_createdbyuserid = OsirisContext.env.USERID;

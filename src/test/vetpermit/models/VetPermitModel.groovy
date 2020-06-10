@@ -44,17 +44,21 @@ class VetPermitModel extends CrudFormModel{
     //     return ( entity.state.toString().matches('DRAFT|CLOSED') ); 
    // }
    
+    def genders = ['M','F','M/F']
+    def agetypes = ['YEARS', 'MONTHS', 'WEEKS', 'DAYS']
+   
     public void afterCreate(){
         entity.txndate = dtSvc.getBasicServerDate();
         entity.expdate = dtSvc.getBasicServerDate() + 3;
         entity.state = "DRAFT" //kay kung ddto ni sa beforeSave, pag edit kay i.draft ang state bsan closed na
+        entity.seqno = "VET-" + dtSvc.getServerYear()+ "-" + seqSvc.getNextFormattedSeries('vetpermit');
         
     }
    
     public void beforeSave(o){
         
         
-        entity.seqno = "VET-" + seqSvc.getNextFormattedSeries('vetpermit');
+        
         entity.recordlog_datecreated = dtSvc.getServerDate();
         entity.recordlog_createdbyuser = OsirisContext.env.FULLNAME;
         entity.recordlog_createdbyuserid = OsirisContext.env.USERID;
@@ -159,7 +163,7 @@ class VetPermitModel extends CrudFormModel{
             
                 def p = [_schemaname: 'vetpermititems'];
                 p.findBy = [ 'parentid': entity.objid];
-                p.select = "specie.name,tagno,gender,age,healthcondition.name";
+                p.select = "specie.name,numberof,tagno,gender,age,agetype,healthcondition.name";
                 if(!entity.items){
                 entity.items = queryService.getList( p );
             }

@@ -72,7 +72,7 @@ class VetBatchPayModel extends CrudFormModel{
                
                 def p = [_schemaname: 'vetpermit'];
                 p.findBy = [ 'state': 'BATCH', 'recordlog_createdbyuserid': user.objid];
-                p.select = "objid,permitno,person.name,amount";
+                p.select = "objid,seqno,person.name,amount";
                 //p.where = [ 'recordlog_createdbyuserid': user.objid];
             
                 entity.items = queryService.getList( p );
@@ -87,7 +87,7 @@ class VetBatchPayModel extends CrudFormModel{
             {
                 def p = [_schemaname: 'batchpayitems'];
                 p.findBy = [ 'parentid': entity.objid];
-                p.select = "permitno,person.name,amount";
+                p.select = "seqno,person.name,amount";
                 return queryService.getList( p );
             }
         }

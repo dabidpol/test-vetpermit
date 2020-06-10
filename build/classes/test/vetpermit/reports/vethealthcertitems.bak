@@ -8,12 +8,12 @@
 		 orientation="Portrait"
 		 pageWidth="612"
 		 pageHeight="1008"
-		 columnWidth="568"
+		 columnWidth="553"
 		 columnSpacing="0"
-		 leftMargin="14"
+		 leftMargin="29"
 		 rightMargin="30"
-		 topMargin="20"
-		 bottomMargin="20"
+		 topMargin="0"
+		 bottomMargin="0"
 		 whenNoDataType="NoPages"
 		 isTitleNewPage="false"
 		 isSummaryNewPage="false">
@@ -30,9 +30,11 @@
 	<field name="specie.name" class="java.lang.String"/>
 	<field name="tagno" class="java.lang.String"/>
 	<field name="gender" class="java.lang.String"/>
-	<field name="age" class="java.lang.String"/>
+	<field name="age" class="java.lang.Integer"/>
 	<field name="healthcondition.name" class="java.lang.String"/>
 	<field name="specie.header" class="java.lang.String"/>
+	<field name="numberof" class="java.lang.Integer"/>
+	<field name="agetype" class="java.lang.String"/>
 
 		<background>
 			<band height="0"  isSplitAllowed="true" >
@@ -47,12 +49,12 @@
 			</band>
 		</pageHeader>
 		<columnHeader>
-			<band height="27"  isSplitAllowed="true" >
+			<band height="18"  isSplitAllowed="true" >
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="0"
-						y="9"
-						width="99"
+						x="-23"
+						y="0"
+						width="81"
 						height="18"
 						key="textField-1"/>
 					<box leftPadding="4">					<pen lineWidth="0.75" lineStyle="Solid"/>
@@ -62,15 +64,15 @@
 					<rightPen lineWidth="0.75" lineStyle="Solid"/>
 </box>
 					<textElement textAlignment="Center">
-						<font pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA["SPECIE"]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="99"
-						y="9"
-						width="151"
+						x="93"
+						y="0"
+						width="109"
 						height="18"
 						key="textField-2"/>
 					<box leftPadding="4">					<pen lineWidth="0.75" lineStyle="Solid"/>
@@ -80,15 +82,15 @@
 					<rightPen lineWidth="0.75" lineStyle="Solid"/>
 </box>
 					<textElement textAlignment="Center">
-						<font pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA[$F{specie.header}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="250"
-						y="9"
-						width="73"
+						x="202"
+						y="0"
+						width="34"
 						height="18"
 						key="textField-3"/>
 					<box leftPadding="4">					<pen lineWidth="0.75" lineStyle="Solid"/>
@@ -98,15 +100,15 @@
 					<rightPen lineWidth="0.75" lineStyle="Solid"/>
 </box>
 					<textElement textAlignment="Center">
-						<font pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA["SEX"]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="323"
-						y="9"
-						width="78"
+						x="236"
+						y="0"
+						width="39"
 						height="18"
 						key="textField-4"/>
 					<box leftPadding="4">					<pen lineWidth="0.75" lineStyle="Solid"/>
@@ -116,15 +118,15 @@
 					<rightPen lineWidth="0.75" lineStyle="Solid"/>
 </box>
 					<textElement textAlignment="Center">
-						<font pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA["AGE"]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="401"
-						y="9"
-						width="151"
+						x="321"
+						y="0"
+						width="122"
 						height="18"
 						key="textField-5"/>
 					<box leftPadding="4">					<pen lineWidth="0.75" lineStyle="Solid"/>
@@ -134,9 +136,45 @@
 					<rightPen lineWidth="0.75" lineStyle="Solid"/>
 </box>
 					<textElement textAlignment="Center">
-						<font pdfFontName="Helvetica-Bold" size="11" isBold="true"/>
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA["HEALTH CONDITION"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="275"
+						y="0"
+						width="46"
+						height="18"
+						key="textField-6"/>
+					<box leftPadding="4">					<pen lineWidth="0.75" lineStyle="Solid"/>
+					<topPen lineWidth="0.75" lineStyle="Solid"/>
+					<leftPen lineWidth="0.75" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.75" lineStyle="Solid"/>
+					<rightPen lineWidth="0.75" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["TYPE"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="58"
+						y="0"
+						width="35"
+						height="18"
+						key="textField-8"/>
+					<box leftPadding="4">					<pen lineWidth="0.75" lineStyle="Solid"/>
+					<topPen lineWidth="0.75" lineStyle="Solid"/>
+					<leftPen lineWidth="0.75" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.75" lineStyle="Solid"/>
+					<rightPen lineWidth="0.75" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["No."]]></textFieldExpression>
 				</textField>
 			</band>
 		</columnHeader>
@@ -144,9 +182,9 @@
 			<band height="16"  isSplitAllowed="true" >
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="0"
+						x="-23"
 						y="0"
-						width="99"
+						width="81"
 						height="16"
 						key="textField"/>
 					<box leftPadding="2">					<topPen lineWidth="0.5" lineStyle="Solid"/>
@@ -155,15 +193,15 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid"/>
 </box>
 					<textElement textAlignment="Center">
-						<font/>
+						<font size="8"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA[$F{specie.name}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="99"
+						x="93"
 						y="0"
-						width="151"
+						width="109"
 						height="16"
 						key="textField"/>
 					<box leftPadding="2">					<topPen lineWidth="0.5" lineStyle="Solid"/>
@@ -172,15 +210,15 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid"/>
 </box>
 					<textElement textAlignment="Center">
-						<font/>
+						<font size="8"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA[$F{tagno}]]></textFieldExpression>
 				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="250"
+						x="202"
 						y="0"
-						width="73"
+						width="34"
 						height="16"
 						key="textField"/>
 					<box leftPadding="2">					<topPen lineWidth="0.5" lineStyle="Solid"/>
@@ -189,15 +227,15 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid"/>
 </box>
 					<textElement textAlignment="Center">
-						<font/>
+						<font size="8"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA[$F{gender}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="323"
+						x="236"
 						y="0"
-						width="78"
+						width="39"
 						height="16"
 						key="textField"/>
 					<box leftPadding="2">					<topPen lineWidth="0.5" lineStyle="Solid"/>
@@ -206,15 +244,15 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid"/>
 </box>
 					<textElement textAlignment="Center">
-						<font/>
+						<font size="8"/>
 					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{age}]]></textFieldExpression>
+				<textFieldExpression   class="java.lang.Integer"><![CDATA[$F{age}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="401"
+						x="321"
 						y="0"
-						width="151"
+						width="122"
 						height="16"
 						key="textField"/>
 					<box leftPadding="2">					<topPen lineWidth="0.5" lineStyle="Solid"/>
@@ -223,9 +261,43 @@
 					<rightPen lineWidth="0.5" lineStyle="Solid"/>
 </box>
 					<textElement textAlignment="Center">
-						<font/>
+						<font size="8"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA[$F{healthcondition.name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="275"
+						y="0"
+						width="46"
+						height="16"
+						key="textField-7"/>
+					<box leftPadding="2">					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{agetype}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="58"
+						y="0"
+						width="35"
+						height="16"
+						key="textField-9"/>
+					<box leftPadding="4">					<topPen lineWidth="0.5" lineStyle="Solid"/>
+					<leftPen lineWidth="0.5" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+					<rightPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.Integer"><![CDATA[$F{numberof}]]></textFieldExpression>
 				</textField>
 			</band>
 		</detail>

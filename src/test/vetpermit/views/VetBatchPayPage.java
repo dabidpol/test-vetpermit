@@ -59,7 +59,7 @@ public class VetBatchPayPage extends javax.swing.JPanel {
 
         xDataTable1.setColumns(new com.rameses.rcp.common.Column[]{
             new com.rameses.rcp.common.Column(new Object[]{
-                new Object[]{"name", "permitno"}
+                new Object[]{"name", "seqno"}
                 , new Object[]{"caption", "Permit No."}
                 , new Object[]{"width", 100}
                 , new Object[]{"minWidth", 0}

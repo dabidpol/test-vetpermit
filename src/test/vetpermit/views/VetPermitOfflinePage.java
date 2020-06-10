@@ -67,6 +67,20 @@ public class VetPermitOfflinePage extends javax.swing.JPanel {
                 , new Object[]{"typeHandler", new com.rameses.rcp.common.LookupColumnHandler("#{item.specie.name}", "lookupSpecie2")}
             }),
             new com.rameses.rcp.common.Column(new Object[]{
+                new Object[]{"name", "numberof"}
+                , new Object[]{"caption", "No."}
+                , new Object[]{"width", 50}
+                , new Object[]{"minWidth", 0}
+                , new Object[]{"maxWidth", 0}
+                , new Object[]{"required", false}
+                , new Object[]{"resizable", true}
+                , new Object[]{"nullWhenEmpty", true}
+                , new Object[]{"editable", true}
+                , new Object[]{"editableWhen", null}
+                , new Object[]{"textCase", com.rameses.rcp.constant.TextCase.NONE}
+                , new Object[]{"typeHandler", new com.rameses.rcp.common.IntegerColumnHandler(null, -1, -1)}
+            }),
+            new com.rameses.rcp.common.Column(new Object[]{
                 new Object[]{"name", "tagno"}
                 , new Object[]{"caption", "-"}
                 , new Object[]{"width", 100}
@@ -92,7 +106,7 @@ public class VetPermitOfflinePage extends javax.swing.JPanel {
                 , new Object[]{"editable", true}
                 , new Object[]{"editableWhen", null}
                 , new Object[]{"textCase", com.rameses.rcp.constant.TextCase.NONE}
-                , new Object[]{"typeHandler", new com.rameses.rcp.common.TextColumnHandler()}
+                , new Object[]{"typeHandler", new com.rameses.rcp.common.ComboBoxColumnHandler("genders", null, null)}
             }),
             new com.rameses.rcp.common.Column(new Object[]{
                 new Object[]{"name", "age"}
@@ -106,7 +120,21 @@ public class VetPermitOfflinePage extends javax.swing.JPanel {
                 , new Object[]{"editable", true}
                 , new Object[]{"editableWhen", null}
                 , new Object[]{"textCase", com.rameses.rcp.constant.TextCase.NONE}
-                , new Object[]{"typeHandler", new com.rameses.rcp.common.TextColumnHandler()}
+                , new Object[]{"typeHandler", new com.rameses.rcp.common.IntegerColumnHandler(null, -1, -1)}
+            }),
+            new com.rameses.rcp.common.Column(new Object[]{
+                new Object[]{"name", "agetype"}
+                , new Object[]{"caption", "Age Type"}
+                , new Object[]{"width", 50}
+                , new Object[]{"minWidth", 0}
+                , new Object[]{"maxWidth", 0}
+                , new Object[]{"required", false}
+                , new Object[]{"resizable", true}
+                , new Object[]{"nullWhenEmpty", true}
+                , new Object[]{"editable", true}
+                , new Object[]{"editableWhen", null}
+                , new Object[]{"textCase", com.rameses.rcp.constant.TextCase.NONE}
+                , new Object[]{"typeHandler", new com.rameses.rcp.common.ComboBoxColumnHandler("agetypes", null, null)}
             }),
             new com.rameses.rcp.common.Column(new Object[]{
                 new Object[]{"name", "healthcondition"}
@@ -140,8 +168,9 @@ public class VetPermitOfflinePage extends javax.swing.JPanel {
         xFormPanel1.add(xCheckBox1);
 
         xTextField5.setCaption("Permit No.");
-        xTextField5.setName("entity.permitno"); // NOI18N
+        xTextField5.setName("entity.seqno"); // NOI18N
         xTextField5.setPreferredSize(new java.awt.Dimension(0, 20));
+        xTextField5.setReadonly(true);
         xFormPanel1.add(xTextField5);
 
         xDateField1.setCaption("Date");

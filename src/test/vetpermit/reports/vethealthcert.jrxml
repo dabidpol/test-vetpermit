@@ -6,9 +6,9 @@
 		 columnCount="1"
 		 printOrder="Vertical"
 		 orientation="Portrait"
-		 pageWidth="612"
-		 pageHeight="1008"
-		 columnWidth="552"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
 		 columnSpacing="0"
 		 leftMargin="30"
 		 rightMargin="30"
@@ -50,6 +50,7 @@
 	<field name="signatory.prcno" class="java.lang.String"/>
 	<field name="signatory.validity" class="java.util.Date"/>
 	<field name="licenseno" class="java.lang.String"/>
+	<field name="seqno" class="java.lang.String"/>
 
 	<variable name="totalamt" class="java.math.BigDecimal" resetType="Report" calculation="Sum">
 		<variableExpression><![CDATA[$F{churvaness.checkamt}]]></variableExpression>
@@ -59,17 +60,17 @@
 			</band>
 		</background>
 		<title>
-			<band height="117"  isSplitAllowed="true" >
+			<band height="191"  isSplitAllowed="true" >
 				<staticText>
 					<reportElement
 						x="0"
-						y="18"
-						width="552"
+						y="11"
+						width="535"
 						height="19"
 						key="staticText-1"/>
 					<box></box>
 					<textElement textAlignment="Center">
-						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
 					</textElement>
 				<text><![CDATA[PROVINCE OF BUKIDNON
 
@@ -78,13 +79,13 @@
 				<staticText>
 					<reportElement
 						x="0"
-						y="62"
-						width="552"
-						height="24"
+						y="40"
+						width="535"
+						height="19"
 						key="staticText-2"/>
 					<box></box>
 					<textElement textAlignment="Center">
-						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
 					</textElement>
 				<text><![CDATA[PROVINCIAL VETERINARY OFFICE
 ]]></text>
@@ -92,13 +93,13 @@
 				<staticText>
 					<reportElement
 						x="0"
-						y="94"
-						width="552"
-						height="23"
+						y="76"
+						width="535"
+						height="19"
 						key="staticText-3"/>
 					<box></box>
 					<textElement textAlignment="Center">
-						<font pdfFontName="Helvetica-Bold" size="16" isBold="true"/>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
 					</textElement>
 				<text><![CDATA[VETERINARY HEALTH CERTIFICATE]]></text>
 				</staticText>
@@ -106,12 +107,12 @@
 					<reportElement
 						x="0"
 						y="0"
-						width="552"
+						width="535"
 						height="18"
 						key="staticText-17"/>
 					<box></box>
 					<textElement textAlignment="Center">
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
 					</textElement>
 				<text><![CDATA[Republic of the Philippines
 ]]></text>
@@ -119,13 +120,13 @@
 				<staticText>
 					<reportElement
 						x="0"
-						y="37"
-						width="552"
+						y="23"
+						width="535"
 						height="18"
 						key="staticText-18"/>
 					<box></box>
 					<textElement textAlignment="Center">
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
 					</textElement>
 				<text><![CDATA[Provincial Capitol
 ]]></text>
@@ -152,6 +153,252 @@
 					<graphicElement stretchType="NoStretch"/>
 					<imageExpression class="java.io.InputStream"><![CDATA[$P{pvetlogo}]]></imageExpression>
 				</image>
+				<staticText>
+					<reportElement
+						x="0"
+						y="101"
+						width="87"
+						height="18"
+						key="staticText-19"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Permit:
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="119"
+						width="87"
+						height="18"
+						key="staticText-20"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Shipper/Owner:
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="137"
+						width="87"
+						height="18"
+						key="staticText-21"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Purpose:
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="155"
+						width="87"
+						height="18"
+						key="staticText-22"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Transportation:
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="86"
+						y="101"
+						width="139"
+						height="18"
+						key="textField"/>
+					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{seqno}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="86"
+						y="119"
+						width="139"
+						height="18"
+						key="textField"/>
+					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{person.name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="86"
+						y="137"
+						width="139"
+						height="18"
+						key="textField"/>
+					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{purpose.name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="86"
+						y="155"
+						width="139"
+						height="18"
+						key="textField"/>
+					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{transportation}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="241"
+						y="101"
+						width="77"
+						height="18"
+						key="staticText-23"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date:
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="241"
+						y="119"
+						width="77"
+						height="18"
+						key="staticText-24"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Origin:
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="241"
+						y="137"
+						width="77"
+						height="18"
+						key="staticText-25"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Destination:
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="MMMMM dd, yyyy" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="318"
+						y="101"
+						width="217"
+						height="18"
+						key="textField"/>
+					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{txndate}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="318"
+						y="119"
+						width="217"
+						height="18"
+						key="textField"/>
+					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{origin}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="318"
+						y="137"
+						width="217"
+						height="18"
+						key="textField"/>
+					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{destination}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="173"
+						width="87"
+						height="18"
+						key="staticText-40"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[License No:
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="86"
+						y="173"
+						width="139"
+						height="18"
+						key="textField-3"/>
+					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{licenseno}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="0"
+						y="56"
+						width="535"
+						height="10"
+						key="staticText-41"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="6" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Telefax/Tel. No.: (088) 813 3587; email address: pvo_bukidnon@yahoo.com; mobile: 09171469223
+]]></text>
+				</staticText>
 			</band>
 		</title>
 		<pageHeader>
@@ -163,556 +410,18 @@
 			</band>
 		</columnHeader>
 		<detail>
-			<band height="385"  isSplitAllowed="true" >
+			<band height="26"  isSplitAllowed="true" >
 				<subreport  isUsingCache="true">
 					<reportElement
 						x="0"
-						y="133"
-						width="552"
+						y="1"
+						width="535"
 						height="25"
 						key="subreport-1"
 						positionType="Float"/>
 					<dataSourceExpression><![CDATA[$F{churvaness}]]></dataSourceExpression>
 					<subreportExpression  class="net.sf.jasperreports.engine.JasperReport"><![CDATA[$P{VETHEALTHCERTITEMS}]]></subreportExpression>
 				</subreport>
-				<staticText>
-					<reportElement
-						x="0"
-						y="35"
-						width="126"
-						height="18"
-						key="staticText-19"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<text><![CDATA[Permit:
-]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="0"
-						y="53"
-						width="126"
-						height="18"
-						key="staticText-20"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<text><![CDATA[Shipper/Owner:
-]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="0"
-						y="71"
-						width="126"
-						height="18"
-						key="staticText-21"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<text><![CDATA[Purpose:
-]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="0"
-						y="89"
-						width="126"
-						height="18"
-						key="staticText-22"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<text><![CDATA[Transportation:
-]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="126"
-						y="35"
-						width="156"
-						height="18"
-						key="textField"/>
-					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{permitno}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="126"
-						y="53"
-						width="156"
-						height="18"
-						key="textField"/>
-					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{person.name}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="126"
-						y="71"
-						width="156"
-						height="18"
-						key="textField"/>
-					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{purpose.name}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="126"
-						y="89"
-						width="156"
-						height="18"
-						key="textField"/>
-					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{transportation}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement
-						x="289"
-						y="35"
-						width="93"
-						height="18"
-						key="staticText-23"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<text><![CDATA[Date:
-]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="289"
-						y="53"
-						width="93"
-						height="18"
-						key="staticText-24"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<text><![CDATA[Origin:
-]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="289"
-						y="71"
-						width="93"
-						height="18"
-						key="staticText-25"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<text><![CDATA[Destination:
-]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="false" pattern="MMMMM dd, yyyy" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="382"
-						y="35"
-						width="170"
-						height="18"
-						key="textField"/>
-					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.util.Date"><![CDATA[$F{txndate}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="382"
-						y="53"
-						width="170"
-						height="18"
-						key="textField"/>
-					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{origin}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="382"
-						y="71"
-						width="170"
-						height="18"
-						key="textField"/>
-					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{destination}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement
-						x="0"
-						y="306"
-						width="71"
-						height="18"
-						key="staticText-26"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<text><![CDATA[OR #:
-]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="0"
-						y="324"
-						width="71"
-						height="18"
-						key="staticText-27"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<text><![CDATA[Amount:
-]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="71"
-						y="307"
-						width="112"
-						height="17"
-						key="textField"
-						positionType="Float"/>
-					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{receiptno}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="71"
-						y="324"
-						width="112"
-						height="18"
-						key="textField"
-						positionType="Float"/>
-					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{receiptamount}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement
-						x="29"
-						y="165"
-						width="108"
-						height="18"
-						key="staticText-31"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica" size="12" isBold="false"/>
-					</textElement>
-				<text><![CDATA[Upon the arrival of
-]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="137"
-						y="165"
-						width="94"
-						height="18"
-						key="textField"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{specie.name}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement
-						x="232"
-						y="165"
-						width="21"
-						height="18"
-						key="staticText-32"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica" size="12" isBold="false"/>
-					</textElement>
-				<text><![CDATA[at
-]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="255"
-						y="166"
-						width="175"
-						height="17"
-						key="textField"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{destination}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement
-						x="430"
-						y="165"
-						width="122"
-						height="18"
-						key="staticText-33"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica" size="12" isBold="false"/>
-					</textElement>
-				<text><![CDATA[they shall be subject
-]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="0"
-						y="182"
-						width="552"
-						height="18"
-						key="staticText-34"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica" size="12" isBold="false"/>
-					</textElement>
-				<text><![CDATA[to such quarantine and test as deemed necessary by the Animal Industry.
-]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="29"
-						y="211"
-						width="149"
-						height="18"
-						key="staticText-35"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica" size="12" isBold="false"/>
-					</textElement>
-				<text><![CDATA[This permit will expire on
-]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="false" pattern="MMMMM dd, yyyy" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="178"
-						y="210"
-						width="87"
-						height="18"
-						key="textField"
-						positionType="Float"/>
-					<box leftPadding="2">					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<textFieldExpression   class="java.util.Date"><![CDATA[$F{expdate}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement
-						x="265"
-						y="211"
-						width="287"
-						height="18"
-						key="staticText-36"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica" size="12" isBold="false"/>
-					</textElement>
-				<text><![CDATA[and is subject to cancellation should there be any
-]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="0"
-						y="229"
-						width="552"
-						height="18"
-						key="staticText-37"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica" size="12" isBold="false"/>
-					</textElement>
-				<text><![CDATA[dangerous communicable animal disease outbreak of the place of origin or may be revoked any time]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="0"
-						y="247"
-						width="552"
-						height="18"
-						key="staticText-38"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica" size="12" isBold="false"/>
-					</textElement>
-				<text><![CDATA[before the said date if interest of the Government so require.
-]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="275"
-						y="308"
-						width="260"
-						height="23"
-						key="textField"
-						positionType="Float"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{signatory.name}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="275"
-						y="328"
-						width="260"
-						height="18"
-						key="textField"
-						positionType="Float"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{signatory.position}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="275"
-						y="343"
-						width="260"
-						height="18"
-						key="textField"
-						positionType="Float"/>
-					<box></box>
-					<textElement textAlignment="Center">
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{signatory.prcno}]]></textFieldExpression>
-				</textField>
-				<textField isStretchWithOverflow="false" pattern="MMMMM dd, yyyy" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="398"
-						y="358"
-						width="137"
-						height="18"
-						key="textField"
-						positionType="Float"/>
-					<box></box>
-					<textElement>
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.util.Date"><![CDATA[$F{signatory.validity}]]></textFieldExpression>
-				</textField>
-				<staticText>
-					<reportElement
-						x="275"
-						y="358"
-						width="123"
-						height="18"
-						key="staticText-39"
-						positionType="Float"/>
-					<box leftPadding="4" rightPadding="2">					<bottomPen lineWidth="0.0"/>
-</box>
-					<textElement textAlignment="Right">
-						<font pdfFontName="Helvetica" size="12" isBold="false"/>
-					</textElement>
-				<text><![CDATA[Valid Until:
-]]></text>
-				</staticText>
-				<staticText>
-					<reportElement
-						x="0"
-						y="107"
-						width="126"
-						height="18"
-						key="staticText-40"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
-					</textElement>
-				<text><![CDATA[License No:
-]]></text>
-				</staticText>
-				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
-					<reportElement
-						x="126"
-						y="107"
-						width="156"
-						height="18"
-						key="textField-3"/>
-					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
-</box>
-					<textElement>
-						<font size="12"/>
-					</textElement>
-				<textFieldExpression   class="java.lang.String"><![CDATA[$F{licenseno}]]></textFieldExpression>
-				</textField>
 			</band>
 		</detail>
 		<columnFooter>
@@ -726,7 +435,7 @@
 						mode="Transparent"
 						x="0"
 						y="10"
-						width="552"
+						width="535"
 						height="8"
 						forecolor="#000000"
 						backcolor="#FFFFFF"
@@ -744,7 +453,313 @@
 			</band>
 		</pageFooter>
 		<summary>
-			<band height="0"  isSplitAllowed="true" >
+			<band height="153"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="84"
+						width="71"
+						height="18"
+						key="staticText-26"
+						positionType="Float"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[OR #:
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="102"
+						width="71"
+						height="18"
+						key="staticText-27"
+						positionType="Float"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Amount:
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="71"
+						y="85"
+						width="112"
+						height="17"
+						key="textField"
+						positionType="Float"/>
+					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{receiptno}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="##0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="71"
+						y="102"
+						width="112"
+						height="18"
+						key="textField"
+						positionType="Float"/>
+					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{receiptamount}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="29"
+						y="0"
+						width="91"
+						height="14"
+						key="staticText-31"
+						positionType="Float"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Upon the arrival of
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="119"
+						y="0"
+						width="80"
+						height="14"
+						key="textField"
+						positionType="Float"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{specie.name}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="195"
+						y="0"
+						width="21"
+						height="14"
+						key="staticText-32"
+						positionType="Float"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[at
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="214"
+						y="0"
+						width="216"
+						height="14"
+						key="textField"
+						positionType="Float"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{destination}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="430"
+						y="0"
+						width="105"
+						height="14"
+						key="staticText-33"
+						positionType="Float"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[they shall be subject
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="14"
+						width="535"
+						height="14"
+						key="staticText-34"
+						positionType="Float"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[to such quarantine and test as deemed necessary by the Animal Industry.
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="29"
+						y="30"
+						width="117"
+						height="14"
+						key="staticText-35"
+						positionType="Float"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[This permit will expire on
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="MMMMM dd, yyyy" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="145"
+						y="30"
+						width="87"
+						height="14"
+						key="textField"
+						positionType="Float"/>
+					<box leftPadding="2">					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
+</box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{expdate}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="232"
+						y="30"
+						width="287"
+						height="14"
+						key="staticText-36"
+						positionType="Float"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[and is subject to cancellation should there be any dangerous
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="44"
+						width="535"
+						height="14"
+						key="staticText-37"
+						positionType="Float"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[communicable animal disease outbreak of the place of origin or may be revoked any time before the said date if]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="58"
+						width="535"
+						height="14"
+						key="staticText-38"
+						positionType="Float"/>
+					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
+</box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[interest of the Government so require.
+]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="275"
+						y="96"
+						width="260"
+						height="23"
+						key="textField"
+						positionType="Float"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{signatory.name}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="275"
+						y="111"
+						width="260"
+						height="18"
+						key="textField"
+						positionType="Float"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{signatory.position}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="275"
+						y="123"
+						width="260"
+						height="18"
+						key="textField"
+						positionType="Float"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{signatory.prcno}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="MMMMM dd, yyyy" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="398"
+						y="135"
+						width="137"
+						height="18"
+						key="textField"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{signatory.validity}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="275"
+						y="135"
+						width="123"
+						height="18"
+						key="staticText-39"
+						positionType="Float"/>
+					<box leftPadding="4" rightPadding="2">					<bottomPen lineWidth="0.0"/>
+</box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica" size="10" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Valid Until:
+]]></text>
+				</staticText>
 			</band>
 		</summary>
 </jasperReport>
