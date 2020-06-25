@@ -80,6 +80,9 @@ class VetPermitModel extends CrudFormModel{
 //            entity.state = 'BATCH'
 //        }
        //println entity
+       
+        entity.origin = entity.originbarangay.name + ", " + entity.originmuncity.name + ", " + entity.originprovince.name
+        entity.destination = entity.destinationbarangay.name + ", " + entity.destinationmuncity.name + ", " + entity.destinationprovince.name
     }
 
     public void afterEdit(){
@@ -150,6 +153,54 @@ class VetPermitModel extends CrudFormModel{
                },
            ])
    }
+   
+    //         ========== Lookup Province =========
+    def getLookupOriginProvince(){
+        return InvokerUtil.lookupOpener('refprovinces:lookup',[
+                onselect :{
+                    entity.originprovince = it                
+                   binding.refresh(); 
+                   //println entity
+               },        
+        ])
+                
+    }
+    
+    //         ========== Lookup MunCity =========
+    def getLookupOriginMuncity(){
+        return InvokerUtil.lookupOpener('refmuncity:lookup', [parentid:entity.originprovince.objid])
+                
+    }
+    
+    //         ========== Lookup Barangay =========
+    def getLookupOriginBarangay(){
+        return InvokerUtil.lookupOpener('refbarangay:lookup', [parentid:entity.originmuncity.objid])
+                
+    }
+    
+    def getLookupDestinationProvince(){
+        return InvokerUtil.lookupOpener('refprovinces:lookup',[
+                onselect :{
+                    entity.destinationprovince = it                
+                   binding.refresh(); 
+                   //println entity
+               },        
+        ])
+                
+    }
+    
+    //         ========== Lookup MunCity =========
+    def getLookupDestinationMuncity(){
+        return InvokerUtil.lookupOpener('refmuncity:lookup', [parentid:entity.destinationprovince.objid])
+                
+    }
+    
+    //         ========== Lookup Barangay =========
+    def getLookupDestinationBarangay(){
+        return InvokerUtil.lookupOpener('refbarangay:lookup', [parentid:entity.destinationmuncity.objid])
+                
+    }
+
 
       
     def selectedItem;

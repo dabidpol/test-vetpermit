@@ -1,4 +1,4 @@
-<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="vetpermit" 
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="vetpermit" allowDelete = "false"
          cols="state,txndate,expdate,seqno,person.name,purpose.name,origin,destination,receiptno"
                 orderBy="txndate DESC">>
     <invokers>

@@ -43,13 +43,22 @@ public class VetPermitOfflinePage extends javax.swing.JPanel {
         xLookupField3 = new com.rameses.rcp.control.XLookupField();
         xLookupField4 = new com.rameses.rcp.control.XLookupField();
         xTextField2 = new com.rameses.rcp.control.XTextField();
-        xTextField3 = new com.rameses.rcp.control.XTextField();
-        xTextField4 = new com.rameses.rcp.control.XTextField();
         xTextField6 = new com.rameses.rcp.control.XTextField();
         xLookupField5 = new com.rameses.rcp.control.XLookupField();
         xTextField7 = new com.rameses.rcp.control.XTextField();
         xDateField3 = new com.rameses.rcp.control.XDateField();
         xDateField2 = new com.rameses.rcp.control.XDateField();
+        xPanel2 = new com.rameses.rcp.control.XPanel();
+        xFormPanel2 = new com.rameses.rcp.control.XFormPanel();
+        xLookupField1 = new com.rameses.rcp.control.XLookupField();
+        xLookupField2 = new com.rameses.rcp.control.XLookupField();
+        xLookupField6 = new com.rameses.rcp.control.XLookupField();
+        xTextField8 = new com.rameses.rcp.control.XTextField();
+        xFormPanel3 = new com.rameses.rcp.control.XFormPanel();
+        xLookupField9 = new com.rameses.rcp.control.XLookupField();
+        xLookupField8 = new com.rameses.rcp.control.XLookupField();
+        xLookupField7 = new com.rameses.rcp.control.XLookupField();
+        xTextField9 = new com.rameses.rcp.control.XTextField();
 
         xDataTable1.setColumns(new com.rameses.rcp.common.Column[]{
             new com.rameses.rcp.common.Column(new Object[]{
@@ -197,16 +206,6 @@ public class VetPermitOfflinePage extends javax.swing.JPanel {
         xTextField2.setPreferredSize(new java.awt.Dimension(0, 20));
         xFormPanel1.add(xTextField2);
 
-        xTextField3.setCaption("Origin");
-        xTextField3.setName("entity.origin"); // NOI18N
-        xTextField3.setPreferredSize(new java.awt.Dimension(0, 20));
-        xFormPanel1.add(xTextField3);
-
-        xTextField4.setCaption("Destination");
-        xTextField4.setName("entity.destination"); // NOI18N
-        xTextField4.setPreferredSize(new java.awt.Dimension(0, 20));
-        xFormPanel1.add(xTextField4);
-
         xTextField6.setCaption("License No.");
         xTextField6.setName("entity.licenseno"); // NOI18N
         xTextField6.setPreferredSize(new java.awt.Dimension(0, 20));
@@ -249,13 +248,100 @@ public class VetPermitOfflinePage extends javax.swing.JPanel {
             xPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(xPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(xFormPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(xDataTable1, javax.swing.GroupLayout.DEFAULT_SIZE, 320, Short.MAX_VALUE)
+                .addComponent(xFormPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(xDataTable1, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         xTabbedPane1.addTab("Veterinary Health Certificate Info (Offline)", xPanel1);
+
+        xFormPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Origin"));
+
+        xLookupField1.setCaption("Province");
+        xLookupField1.setExpression("#{entity.originprovince.name}");
+        xLookupField1.setHandler("lookupOriginProvince");
+        xLookupField1.setName("entity.originprovince"); // NOI18N
+        xLookupField1.setPreferredSize(new java.awt.Dimension(0, 20));
+        xFormPanel2.add(xLookupField1);
+
+        xLookupField2.setCaption("Mun/City");
+        xLookupField2.setExpression("#{entity.originmuncity.name}");
+        xLookupField2.setHandler("lookupOriginMuncity");
+        xLookupField2.setName("entity.originmuncity"); // NOI18N
+        xLookupField2.setPreferredSize(new java.awt.Dimension(0, 20));
+        xFormPanel2.add(xLookupField2);
+
+        xLookupField6.setCaption("Barangay");
+        xLookupField6.setExpression("#{entity.originbarangay.name}");
+        xLookupField6.setHandler("lookupOriginBarangay");
+        xLookupField6.setName("entity.originbarangay"); // NOI18N
+        xLookupField6.setPreferredSize(new java.awt.Dimension(0, 20));
+        xLookupField6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xLookupField6ActionPerformed(evt);
+            }
+        });
+        xFormPanel2.add(xLookupField6);
+
+        xTextField8.setCaption("Origin");
+        xTextField8.setDepends(null);
+        xTextField8.setName("entity.origin"); // NOI18N
+        xTextField8.setPreferredSize(new java.awt.Dimension(0, 20));
+        xTextField8.setReadonly(true);
+        xFormPanel2.add(xTextField8);
+
+        xFormPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Destination"));
+
+        xLookupField9.setCaption("Province");
+        xLookupField9.setExpression("#{entity.destinationprovince.name}");
+        xLookupField9.setHandler("lookupDestinationProvince");
+        xLookupField9.setName("entity.destinationprovince"); // NOI18N
+        xLookupField9.setPreferredSize(new java.awt.Dimension(0, 20));
+        xFormPanel3.add(xLookupField9);
+
+        xLookupField8.setCaption("Mun/City");
+        xLookupField8.setExpression("#{entity.destinationmuncity.name}");
+        xLookupField8.setHandler("lookupDestinationMuncity");
+        xLookupField8.setName("entity.destinationmuncity"); // NOI18N
+        xLookupField8.setPreferredSize(new java.awt.Dimension(0, 20));
+        xFormPanel3.add(xLookupField8);
+
+        xLookupField7.setCaption("Barangay");
+        xLookupField7.setExpression("#{entity.destinationbarangay.name}");
+        xLookupField7.setHandler("lookupDestinationBarangay");
+        xLookupField7.setName("entity.destinationbarangay"); // NOI18N
+        xLookupField7.setPreferredSize(new java.awt.Dimension(0, 20));
+        xFormPanel3.add(xLookupField7);
+
+        xTextField9.setCaption("Destination");
+        xTextField9.setName("entity.destination"); // NOI18N
+        xTextField9.setPreferredSize(new java.awt.Dimension(0, 20));
+        xTextField9.setReadonly(true);
+        xFormPanel3.add(xTextField9);
+
+        javax.swing.GroupLayout xPanel2Layout = new javax.swing.GroupLayout(xPanel2);
+        xPanel2.setLayout(xPanel2Layout);
+        xPanel2Layout.setHorizontalGroup(
+            xPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(xPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(xPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(xFormPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(xFormPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 562, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(359, Short.MAX_VALUE))
+        );
+        xPanel2Layout.setVerticalGroup(
+            xPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(xPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(xFormPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(xFormPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(352, Short.MAX_VALUE))
+        );
+
+        xTabbedPane1.addTab("Origin & Destination", xPanel2);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -273,6 +359,11 @@ public class VetPermitOfflinePage extends javax.swing.JPanel {
                 .addComponent(xTabbedPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 689, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void xLookupField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xLookupField6ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_xLookupField6ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.rameses.entity.components.EntityLookup entityLookup1;
     private com.rameses.rcp.control.XCheckBox xCheckBox1;
@@ -281,16 +372,25 @@ public class VetPermitOfflinePage extends javax.swing.JPanel {
     private com.rameses.rcp.control.XDateField xDateField2;
     private com.rameses.rcp.control.XDateField xDateField3;
     private com.rameses.rcp.control.XFormPanel xFormPanel1;
+    private com.rameses.rcp.control.XFormPanel xFormPanel2;
+    private com.rameses.rcp.control.XFormPanel xFormPanel3;
+    private com.rameses.rcp.control.XLookupField xLookupField1;
+    private com.rameses.rcp.control.XLookupField xLookupField2;
     private com.rameses.rcp.control.XLookupField xLookupField3;
     private com.rameses.rcp.control.XLookupField xLookupField4;
     private com.rameses.rcp.control.XLookupField xLookupField5;
+    private com.rameses.rcp.control.XLookupField xLookupField6;
+    private com.rameses.rcp.control.XLookupField xLookupField7;
+    private com.rameses.rcp.control.XLookupField xLookupField8;
+    private com.rameses.rcp.control.XLookupField xLookupField9;
     private com.rameses.rcp.control.XPanel xPanel1;
+    private com.rameses.rcp.control.XPanel xPanel2;
     private com.rameses.rcp.control.XTabbedPane xTabbedPane1;
     private com.rameses.rcp.control.XTextField xTextField2;
-    private com.rameses.rcp.control.XTextField xTextField3;
-    private com.rameses.rcp.control.XTextField xTextField4;
     private com.rameses.rcp.control.XTextField xTextField5;
     private com.rameses.rcp.control.XTextField xTextField6;
     private com.rameses.rcp.control.XTextField xTextField7;
+    private com.rameses.rcp.control.XTextField xTextField8;
+    private com.rameses.rcp.control.XTextField xTextField9;
     // End of variables declaration//GEN-END:variables
 }

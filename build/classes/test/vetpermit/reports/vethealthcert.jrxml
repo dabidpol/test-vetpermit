@@ -271,9 +271,9 @@
 				</textField>
 				<staticText>
 					<reportElement
-						x="241"
+						x="233"
 						y="101"
-						width="77"
+						width="67"
 						height="18"
 						key="staticText-23"/>
 					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
@@ -286,9 +286,9 @@
 				</staticText>
 				<staticText>
 					<reportElement
-						x="241"
+						x="233"
 						y="119"
-						width="77"
+						width="67"
 						height="18"
 						key="staticText-24"/>
 					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
@@ -301,9 +301,9 @@
 				</staticText>
 				<staticText>
 					<reportElement
-						x="241"
+						x="233"
 						y="137"
-						width="77"
+						width="67"
 						height="18"
 						key="staticText-25"/>
 					<box leftPadding="4">					<bottomPen lineWidth="0.5"/>
@@ -316,9 +316,9 @@
 				</staticText>
 				<textField isStretchWithOverflow="false" pattern="MMMMM dd, yyyy" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="318"
+						x="300"
 						y="101"
-						width="217"
+						width="235"
 						height="18"
 						key="textField"/>
 					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
@@ -330,9 +330,9 @@
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="318"
+						x="300"
 						y="119"
-						width="217"
+						width="235"
 						height="18"
 						key="textField"/>
 					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
@@ -344,9 +344,9 @@
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="318"
+						x="300"
 						y="137"
-						width="217"
+						width="235"
 						height="18"
 						key="textField"/>
 					<box leftPadding="2">					<bottomPen lineWidth="0.25" lineStyle="Solid"/>
@@ -536,20 +536,20 @@
 					<reportElement
 						x="119"
 						y="0"
-						width="80"
+						width="167"
 						height="14"
 						key="textField"
 						positionType="Float"/>
 					<box leftPadding="4">					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
 </box>
-					<textElement>
+					<textElement textAlignment="Center">
 						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA[$F{specie.name}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement
-						x="195"
+						x="286"
 						y="0"
 						width="21"
 						height="14"
@@ -565,35 +565,19 @@
 				</staticText>
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
 					<reportElement
-						x="214"
+						x="306"
 						y="0"
-						width="216"
+						width="229"
 						height="14"
 						key="textField"
 						positionType="Float"/>
 					<box leftPadding="4">					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
 </box>
-					<textElement>
+					<textElement textAlignment="Center">
 						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
 					</textElement>
 				<textFieldExpression   class="java.lang.String"><![CDATA[$F{destination}]]></textFieldExpression>
 				</textField>
-				<staticText>
-					<reportElement
-						x="430"
-						y="0"
-						width="105"
-						height="14"
-						key="staticText-33"
-						positionType="Float"/>
-					<box leftPadding="4">					<bottomPen lineWidth="0.0"/>
-</box>
-					<textElement textAlignment="Left">
-						<font pdfFontName="Helvetica" size="10" isBold="false"/>
-					</textElement>
-				<text><![CDATA[they shall be subject
-]]></text>
-				</staticText>
 				<staticText>
 					<reportElement
 						x="0"
@@ -607,7 +591,7 @@
 					<textElement textAlignment="Left">
 						<font pdfFontName="Helvetica" size="10" isBold="false"/>
 					</textElement>
-				<text><![CDATA[to such quarantine and test as deemed necessary by the Animal Industry.
+				<text><![CDATA[they shall be subject to such quarantine and test as deemed necessary by the Animal Industry.
 ]]></text>
 				</staticText>
 				<staticText>
@@ -630,22 +614,22 @@
 					<reportElement
 						x="145"
 						y="30"
-						width="87"
+						width="116"
 						height="14"
 						key="textField"
 						positionType="Float"/>
 					<box leftPadding="2">					<bottomPen lineWidth="0.5" lineStyle="Solid"/>
 </box>
-					<textElement>
+					<textElement textAlignment="Center">
 						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
 					</textElement>
 				<textFieldExpression   class="java.util.Date"><![CDATA[$F{expdate}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement
-						x="232"
+						x="261"
 						y="30"
-						width="287"
+						width="273"
 						height="14"
 						key="staticText-36"
 						positionType="Float"/>
@@ -670,7 +654,7 @@
 					<textElement textAlignment="Left">
 						<font pdfFontName="Helvetica" size="10" isBold="false"/>
 					</textElement>
-				<text><![CDATA[communicable animal disease outbreak of the place of origin or may be revoked any time before the said date if]]></text>
+				<text><![CDATA[communicable animal disease outbreak of the place of origin or may be revoked any time before the said date if interest]]></text>
 				</staticText>
 				<staticText>
 					<reportElement
@@ -685,7 +669,7 @@
 					<textElement textAlignment="Left">
 						<font pdfFontName="Helvetica" size="10" isBold="false"/>
 					</textElement>
-				<text><![CDATA[interest of the Government so require.
+				<text><![CDATA[of the Government so require.
 ]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
